@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "Google Meet Audio Transcriber & Summarizer",
+    "version": "1.0",
+    "permissions": [
+      "activeTab",
+      "scripting",
+      "audioCapture",
+      "storage"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://meet.google.com/*"],
+        "js": ["content.js"]
+      }
+    ],
+    "action": {
+      "default_popup": "popup.html"
+    }
+  }
+  
